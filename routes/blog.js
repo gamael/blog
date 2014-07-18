@@ -1,4 +1,4 @@
-module.exports = function (models) {  
+module.exports = function (models) {
     'use strict';
     return {
         /**
@@ -6,17 +6,16 @@ module.exports = function (models) {
          * @param req
          * @param res
          */
-        index: function(req, res) {  
-    models.Article.articlesForIndex()
-        .then(function (articles) {
-            res.render('blog_index', {articles: articles});
-        },
-        function (err) {
-            res.send(500);
-        });
-}    
-    
-    
-    
+        index: function(req, res) {
+            models.Article.articlesForIndex()
+                .then(function (articles) {
+                    res.render('blog_index', {articles: articles});
+                },
+                function (err) {
+                    console.error(err.message, err);
+                    res.send(500);
+                });
+
+        }
     }
 };

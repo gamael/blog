@@ -1,5 +1,6 @@
-module.exports = function(models) {  
+module.exports = function(models) {
     'use strict';
+
     return {
         /**
          * Home Page Route
@@ -9,6 +10,7 @@ module.exports = function(models) {
         index: function(req, res){
             res.render('index', { title: 'Express' });
         },
+
         /**
          * include routes for blog
          */
